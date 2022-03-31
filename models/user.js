@@ -8,7 +8,7 @@ gender: {
     type: String,
     enum: ['MALE', 'FEMALE']
 },
-PHONE: Number
+phone: Number
 })
 
-module.exports=mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);
