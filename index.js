@@ -1,20 +1,21 @@
-const http = require("http"), 
-axios = require("axios"); 
- 
-//create a server object: 
-http.createServer((req, res) => { 
-    res.write(users.join(", ")); //display the list of users on the page 
-    res.end(); //end the response 
-}).listen(8000); //the server object listens on port 8080 
- 
-let users = []; 
- 
-(async function getNames() { 
-  try { 
-    const { data } = await axios.get( 
-      "https://jsonplaceholder.typicode.com/users" ); 
-       users = data.map(user => user.name); 
-  } catch (error) { 
-    console.log(error); 
-  }
-})()
+const http = require("http"),
+      logger = require("morgan"),
+      express = require("express"),
+      bodyParser =require("body-parser");
+
+      let app = express();
+      let port = 8000;
+
+      app.use(bodyParser.json());
+      app.use(logger("tiny"));
+
+      app.get("/:foo/:bar", (req, res)=>{
+      res.json({message: "hello world",
+      data:[
+          req.params.foo,
+          req.params.bar
+      ]});
+    })
+          app.listen(port, function(err){
+          console.log("listening on port: "+ port)
+      });
