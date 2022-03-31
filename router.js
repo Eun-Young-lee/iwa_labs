@@ -1,13 +1,8 @@
 const express=require("express"),
-    router = express.Router();
+      router = express.Router();
+      itemCtrl =require("./item-controller");
 
-    router.get("/:foo/:bar", (req, res)=>{
-        res.json({message: "hello world",
-        data:[
-            req.params.foo,
-            req.params.bar
-        ]});
-      })
-
+    router.get("/:foo/:bar", itemCtrl.helloWorld);
+   
 module.exports = router;
 

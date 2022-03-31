@@ -5,4 +5,4 @@ exports.helloWorld = function(req, res){
             req.params.bar
         ]});      
 
-}
+};
