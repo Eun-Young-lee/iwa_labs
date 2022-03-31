@@ -9,13 +9,7 @@ const http = require("http"),
       app.use(bodyParser.json());
       app.use(logger("tiny"));
 
-      app.get("/:foo/:bar", (req, res)=>{
-      res.json({message: "hello world",
-      data:[
-          req.params.foo,
-          req.params.bar
-      ]});
-    })
+    
           app.listen(port, function(err){
           console.log("listening on port: "+ port)
       });
