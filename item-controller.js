@@ -4,5 +4,4 @@ exports.helloWorld = function(req, res){
             req.params.foo,
             req.params.bar
         ]});      
-
 }
