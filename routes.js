@@ -14,6 +14,13 @@ const express=require("express"),
     router.get('/users/:id', userCtrl.getUser); 
     router.put('/users/:id', userCtrl.updateUser); 
     router.delete('/users/:id', userCtrl.deleteUser); 
+
+    router.post('/images', upload.single('image'), imageCtrl.uploadImage); 
+    router.get('/images', imageCtrl.getImages); 
+    router.get('/images/:id', imageCtrl.getImage); 
+    router.delete('/images/:id', imageCtrl.deleteImage);
+
+
     
 module.exports = router;
 
