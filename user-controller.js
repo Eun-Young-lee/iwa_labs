@@ -37,9 +37,6 @@ exports.getUsers = function(req, res) {
     });  
   };
 
-
-
-
    exports.updateUser = function(req, res) {  
     User.findOneAndUpdate ({_id: req.params.id}, req.body, {new:true},function 
    (err, user) {  
