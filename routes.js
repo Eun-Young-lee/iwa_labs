@@ -1,7 +1,12 @@
+module.exports.UPLOAD_PATH = 'uploads';
+
 const express=require("express"),
       router = express.Router(),
-      itemCtrl =require("./item-controller"),
-      userCtrl = require("./user-controller");
+    //itemCtrl =require("./item-controller"),
+    imageCtrl = require('./image-controller'),     
+     userCtrl = require("./user-controller"),
+     multer = require('multer'),
+     upload = multer({ dest: module.exports.UPLOAD_PATH });
 
     //router.get("/:foo/:bar", itemCtrl.helloWorld);
     router.post('/users', userCtrl.createUser); 
