@@ -11,10 +11,10 @@ let port = process.env.PORT || 8000;
 dotenv.config();
 
 app.use(bodyParser.json());
-app.use(require('./routes'));
 app.use(logger("tiny"));
+app.use(require('./routes'));
 
-const dbURI = "mongodb://localhost/test";
+//const dbURI = "mongodb://localhost/test";
 
 mongoose.connect(process.env.dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
         .then((result) => console.log('connected to db'))
